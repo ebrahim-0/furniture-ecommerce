@@ -1,0 +1,10 @@
+@import "./Colors";
+
+.products {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.active {
+  border: 3px solid $activeColor;
+}

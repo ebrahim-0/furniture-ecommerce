@@ -1,0 +1,12 @@
+@import "./Colors";
+.head {
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 90px;
+    height: 4px;
+    background-color: $activeColor;
+    bottom: -10px;
+  }
+}
