@@ -19,7 +19,7 @@ export default function ProductImage({ images, main }) {
                 src={image.url}
                 alt=""
                 className={`rounded-md h-[100px] w-full object-cover ${
-                  image.url === mainImg.url ? "active" : ""
+                  image.url === mainImg.url ? "activeImg" : ""
                 }`}
                 onClick={() => setMainImg(images[i])}
               />

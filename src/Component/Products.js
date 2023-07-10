@@ -31,7 +31,6 @@ export default function Products() {
       </h4>
       <div className="flex items-center justify-between container mx-auto w-2/6 mt-5">
         <h4 className="text-center">{categories.length} Products Found</h4>
-        {/* <span className="h-[3px] w-96 bg-slate-600"></span> */}
       </div>
       <div className="grid md:grid-cols-5 container mx-auto w-5/6 p-7 pt-0">
         <aside className="flex flex-col">

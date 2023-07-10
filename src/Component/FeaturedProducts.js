@@ -18,7 +18,7 @@ export default function FeaturedProducts({ products }) {
           {products.length > 0 &&
             indexProducts.map((product) => {
               return (
-                <div>
+                <>
                   <Link
                     className="box w-full"
                     key={product}
@@ -37,16 +37,16 @@ export default function FeaturedProducts({ products }) {
                         ${products[product].price / 100}
                       </span>
                     </p>
+                    <div>
+                      <button
+                        className="bg-[#6f4f3c] text-white px-4 py-2 rounded-md hover:bg-[#aa816a] hover:text-black transition-all duration-300"
+                        onClick={() => dispatch(addToCart(products[product]))}
+                      >
+                        Add To Cart
+                      </button>
+                    </div>
                   </Link>
-                  <div>
-                    <button
-                      className="bg-[#6f4f3c] text-white px-4 py-2 rounded-md hover:bg-[#aa816a] hover:text-black transition-all duration-300"
-                      onClick={() => dispatch(addToCart(products[product]))}
-                    >
-                      Add To Cart
-                    </button>
-                  </div>
-                </div>
+                </>
               );
             })}
         </div>
