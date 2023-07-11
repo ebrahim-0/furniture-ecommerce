@@ -39,6 +39,13 @@ export default function NavBar() {
           Products
         </NavLink>
         <NavLink
+          to="/favorite"
+          onClick={mobile}
+          className="hover:text-amber-500 transition-all duration-300 p-3 md:p-0"
+        >
+          Favorite
+        </NavLink>
+        <NavLink
           to="/cart"
           onClick={mobile}
           className="flex text-3xl items-center gap-3 cursor-pointer hover:text-amber-500 transition-all duration-300 p-3 md:p-0"

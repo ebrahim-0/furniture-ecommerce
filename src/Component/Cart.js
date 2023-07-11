@@ -86,7 +86,7 @@ export default function Cart() {
           <div className="my-9 flex justify-between">
             <Link
               to="/products"
-              className="bg-amber-500 text-sm md:text-xl text-black  mr-4 md:px-4 py-1 rounded-md hover:bg-[#aa816a] hover:text-white transition-all duration-300"
+              className="bg-amber-500 text-sm md:text-xl text-black  mr-1 md:px-4 py-1 rounded-md hover:bg-[#aa816a] hover:text-white transition-all duration-300"
             >
               Continue Shopping
             </Link>

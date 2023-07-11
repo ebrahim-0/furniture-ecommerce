@@ -4,6 +4,8 @@ import { fetchProducts } from "../reduxTK/Slice/ProductsSlice";
 import { Link } from "react-router-dom";
 import { fetchProductsByCategories } from "../reduxTK/Slice/CategoriesSlice";
 import { addToCart } from "../reduxTK/Slice/CartSlice";
+import { BsFillBookmarkFill } from "react-icons/bs";
+import { addToFavorite } from "../reduxTK/Slice/FavoriteSlice";
 
 export default function Products() {
   const products = useSelector((state) => state.products);
@@ -82,13 +84,23 @@ export default function Products() {
                       </span>
                     </p>
                   </Link>
-                  <div>
+                  <div className="flex items-center justify-between">
                     <button
                       className="bg-[#6f4f3c] text-white px-4 py-2 rounded-md hover:bg-[#aa816a] hover:text-black transition-all duration-300"
-                      onClick={() => dispatch(addToCart(product))}
+                      onClick={() => {
+                        dispatch(addToCart(product));
+                      }}
                     >
                       Add To Cart
                     </button>
+
+                    <BsFillBookmarkFill
+                      className="text-2xl"
+                      onClick={(e) => {
+                        console.log(e.target.classList.toggle("text-red-800"));
+                        dispatch(addToFavorite(product));
+                      }}
+                    />
                   </div>
                 </div>
               );

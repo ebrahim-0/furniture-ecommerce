@@ -5,6 +5,7 @@ import { fetchProducts } from "../reduxTK/Slice/ProductsSlice";
 import FeaturedProducts from "./FeaturedProducts";
 import Services from "./Services";
 import Landing from "./Landing";
+import { BrowserRouter, Routes } from "react-router-dom";
 
 export default function Home() {
   const products = useSelector((state) => state.products);

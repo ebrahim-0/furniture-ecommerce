@@ -7,6 +7,7 @@ import Products from "./Component/Products";
 import Cart from "./Component/Cart";
 import ProductDetails from "./Component/ProductDetails";
 import Footer from "./Component/Footer";
+import Favorite from "./Component/Favorite";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/favorite" element={<Favorite />} />
         <Route path="/products/:productId" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
