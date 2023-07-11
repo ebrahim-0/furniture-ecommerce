@@ -13,9 +13,16 @@ export const FavoriteSlice = createSlice({
         state.push(cloneProduct);
       }
     },
+    deleteFromFavorite: (state, action) => {
+      return state.filter((product) => product.id !== action.payload.id);
+    },
+    clear: () => {
+      return [];
+    },
   },
 });
 
-export const { addToFavorite } = FavoriteSlice.actions;
+export const { addToFavorite, deleteFromFavorite, clear } =
+  FavoriteSlice.actions;
 
 export default FavoriteSlice.reducer;
