@@ -4,12 +4,16 @@ import { fetchProducts } from "../reduxTK/Slice/ProductsSlice";
 import { Link } from "react-router-dom";
 import { fetchProductsByCategories } from "../reduxTK/Slice/CategoriesSlice";
 import { addToCart } from "../reduxTK/Slice/CartSlice";
-import { BsFillBookmarkFill } from "react-icons/bs";
-import { addToFavorite } from "../reduxTK/Slice/FavoriteSlice";
+import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
+import {
+  addToFavorite,
+  deleteFromFavorite,
+} from "../reduxTK/Slice/FavoriteSlice";
 
 export default function Products() {
   const products = useSelector((state) => state.products);
   const categories = useSelector((state) => state.categories);
+  const cart = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
 
@@ -93,14 +97,34 @@ export default function Products() {
                     >
                       Add To Cart
                     </button>
+                    {sessionStorage.getItem(`productId${product.id}`) ===
+                    product.id ? (
+                      <BsFillBookmarkFill
+                        className="text-2xl text-red-800"
+                        onClick={(e) => {
+                          console.log(
+                            e.target.classList.toggle("text-red-800")
+                          );
+                          dispatch(deleteFromFavorite(product));
+                          sessionStorage.setItem(`productId${product.id}`, "");
+                        }}
+                      />
+                    ) : (
+                      <BsFillBookmarkFill
+                        className="text-2xl"
+                        onClick={(e) => {
+                          console.log(
+                            e.target.classList.toggle("text-red-800")
+                          );
 
-                    <BsFillBookmarkFill
-                      className="text-2xl"
-                      onClick={(e) => {
-                        console.log(e.target.classList.toggle("text-red-800"));
-                        dispatch(addToFavorite(product));
-                      }}
-                    />
+                          dispatch(addToFavorite(product));
+                          sessionStorage.setItem(
+                            `productId${product.id}`,
+                            product.id
+                          );
+                        }}
+                      />
+                    )}
                   </div>
                 </div>
               );

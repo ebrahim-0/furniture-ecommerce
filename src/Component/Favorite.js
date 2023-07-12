@@ -20,7 +20,7 @@ export default function Favorite() {
       <div className="p-9">
         {favorite.length > 0 ? (
           <>
-            <div className="overflow-auto">
+            <div className="overflow-auto mb-7">
               <table className="w-[500px] md:w-full table-auto">
                 <thead>
                   <tr>
@@ -73,7 +73,7 @@ export default function Favorite() {
               </table>
             </div>
             <Link
-              className="bg-black text-sm md:text-xl text-white  md:px-4 py-1 mr-20 rounded-md hover:bg-[#aa816a] hover:text-white transition-all duration-300"
+              className="bg-black text-sm md:text-xl text-white mt-44 md:px-4 py-1 mr-20 rounded-md hover:bg-[#aa816a] hover:text-white transition-all duration-300"
               onClick={() => dispatch(clear())}
             >
               Clear Favorite

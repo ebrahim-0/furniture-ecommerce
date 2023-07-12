@@ -9,7 +9,7 @@ export const FavoriteSlice = createSlice({
         (product) => product.id === action.payload.id
       );
       if (!findProduct) {
-        const cloneProduct = { ...action.payload };
+        const cloneProduct = { ...action.payload, favorite: true };
         state.push(cloneProduct);
       }
     },

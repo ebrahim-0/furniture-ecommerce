@@ -51,7 +51,7 @@ export default function NavBar() {
           className="flex text-3xl items-center gap-3 cursor-pointer hover:text-amber-500 transition-all duration-300 p-3 md:p-0"
         >
           Cart
-          <FaShoppingCart className="" />
+          <FaShoppingCart />
           <span className="text-base w-6 h-6 flex items-center justify-center rounded-full text-white bg-amber-500 relative right-5 -top-3">
             {cart.length}
           </span>
