@@ -4,7 +4,7 @@ import { fetchProducts } from "../reduxTK/Slice/ProductsSlice";
 import { Link } from "react-router-dom";
 import { fetchProductsByCategories } from "../reduxTK/Slice/CategoriesSlice";
 import { addToCart } from "../reduxTK/Slice/CartSlice";
-import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
+import { BsFillBookmarkFill } from "react-icons/bs";
 import {
   addToFavorite,
   deleteFromFavorite,
@@ -13,7 +13,6 @@ import {
 export default function Products() {
   const products = useSelector((state) => state.products);
   const categories = useSelector((state) => state.categories);
-  const cart = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
 
