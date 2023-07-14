@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../reduxTK/Slice/ProductsSlice";
 import { Link } from "react-router-dom";
@@ -19,6 +19,10 @@ export default function Products() {
   useEffect(() => {
     dispatch(fetchProducts());
     dispatch(fetchProductsByCategories());
+
+    return () => {
+      console.log("test");
+    };
   }, []);
 
   const filterCategory = (arr) => {
