@@ -46,8 +46,18 @@ export default function Products() {
           <div className="sticky top-24">
             <h1 className="text-lg font-semibold">Category</h1>
             <Link
-              className="text-slate-400 py-1"
-              onClick={() => dispatch(fetchProductsByCategories())}
+              className="text-slate-400 py-1 btn"
+              onClick={(e) => {
+                dispatch(fetchProductsByCategories());
+
+                document.querySelectorAll(".btn").forEach((btn) => {
+                  if (btn.classList.contains("text-red-500", "font-bold")) {
+                    btn.classList.remove("text-red-500", "font-bold");
+                  } else {
+                    e.target.classList.add("text-red-500", "font-bold");
+                  }
+                });
+              }}
             >
               All
             </Link>
@@ -56,10 +66,20 @@ export default function Products() {
                 return (
                   <button
                     key={i}
-                    className="text-slate-400 py-1 block"
-                    onClick={(e) =>
-                      dispatch(fetchProductsByCategories(e.target.textContent))
-                    }
+                    className="text-slate-400 py-1 block btn"
+                    onClick={(e) => {
+                      dispatch(fetchProductsByCategories(e.target.textContent));
+
+                      document.querySelectorAll(".btn").forEach((btn) => {
+                        if (
+                          btn.classList.contains("text-red-500", "font-bold")
+                        ) {
+                          btn.classList.remove("text-red-500", "font-bold");
+                        } else {
+                          e.target.classList.add("text-red-500", "font-bold");
+                        }
+                      });
+                    }}
                   >
                     {category}
                   </button>
@@ -82,6 +102,7 @@ export default function Products() {
                         className="h-56 w-full rounded object-cover hover:opacity-60 transition-all duration-300"
                         src={product.image}
                         alt={product.description}
+                        // loading="lazy"
                       />
                     </div>
                     <p className="flex justify-between py-3 px-1 capitalize">
