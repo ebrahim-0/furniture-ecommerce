@@ -9,7 +9,6 @@ export default function Favorite() {
   const favorite = useSelector((state) => state.favorite);
 
   const dispatch = useDispatch();
-  document.querySelector(".test").addEventListener("click", () => {});
 
   console.log(favorite);
 
