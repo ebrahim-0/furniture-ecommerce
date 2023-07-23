@@ -9,8 +9,10 @@ export default function Favorite() {
   const favorite = useSelector((state) => state.favorite);
 
   const dispatch = useDispatch();
+  document.querySelector(".test").addEventListener("click", () => {});
 
   console.log(favorite);
+
   return (
     <>
       <IoMdArrowRoundBack
@@ -47,7 +49,6 @@ export default function Favorite() {
                         <td className="border-b-2 p-2 py-8 text-amber-500">
                           ${product.price / 100}
                         </td>
-
                         <td className="border-b-2 p-2 py-8">
                           <button
                             className="bg-[#6f4f3c] text-white px-4 py-2 rounded-md hover:bg-[#aa816a] hover:text-black transition-all duration-300"
